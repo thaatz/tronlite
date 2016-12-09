@@ -4,7 +4,9 @@ REM call :read_settings settings.ini
 
 title Buttfixer 3000
 for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
-	echo "%%i"
+	pushd "%~dp0" 2>NUL
+	:: we pushd every time to reset the current directory
+	call "%%i"
 )
 pause
 

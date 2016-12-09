@@ -2,4 +2,5 @@
 cls
 @echo off
 pushd "%~dp0" 2>NUL
+echo Running Defraggler . . .
 df.exe %systemdrive%
