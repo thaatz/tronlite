@@ -1,5 +1,10 @@
 @echo off
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: USER SETTINGS
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 set tronlog=%userprofile%\desktop\tronlite.log
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 pushd "%~dp0" 2>NUL
 REM call :read_settings settings.ini
 
@@ -19,16 +24,16 @@ if /i not !ERRORLEVEL!==0 (
 
 
 title Buttfixer 3000
-echo tronlite %date% at %time%>>"%tronlite%"
+echo tronlite %date% at %time%>>"%tronlog%"
 for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
 	:: we pushd every time to reset the current directory
 	pushd "%~dp0" 2>NUL
-	echo. >>"%tronlite%"
-	echo %time% running %%i>>"%tronlite%"
+	echo. >>"%tronlog%"
+	echo %time% running %%i>>"%tronlog%"
 	call "%%i"
 )
-echo tronlite finished on %date% at %time%>>"%tronlite%"
-echo. >>"%tronlite%"
+echo tronlite finished on %date% at %time%>>"%tronlog%"
+echo. >>"%tronlog%"
 pause
 
 REM :read_settings
