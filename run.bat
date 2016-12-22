@@ -9,7 +9,7 @@ pushd "%~dp0" 2>NUL
 REM call :read_settings settings.ini
 
 fsutil dirty query %systemdrive% >NUL 2>&1
-if /i not !ERRORLEVEL!==0 (
+if /i not %ERRORLEVEL%==0 (
 	color cf
 	cls
 	echo.
