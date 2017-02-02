@@ -55,8 +55,8 @@ pause
 if /i "%exs%"=="1" set ext="shutdown /r /f"
 if /i "%exs%"=="2" set ext="shutdown /s /f"
 if /i "%exs%"=="0" set ext=
-echo %ext%
-pause
+REM echo %ext%
+REM pause
 
 echo tronlite %date% at %time%>>"%tronlog%"
 for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
