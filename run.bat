@@ -52,8 +52,8 @@ goto :main
 pause
 
 :m2
-if /i "%exs%"=="1" set ext="shutdown /r /f"
-if /i "%exs%"=="2" set ext="shutdown /s /f"
+if /i "%exs%"=="1" set ext=%systemroot%\system32\shutdown.exe /r /f
+if /i "%exs%"=="2" set ext=%systemroot%\system32\shutdown.exe /s /f
 if /i "%exs%"=="0" set ext=
 REM echo %ext%
 REM pause
@@ -68,7 +68,7 @@ for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
 )
 echo tronlite finished on %date% at %time%>>"%tronlog%"
 echo. >>"%tronlog%"
-%ext% >nul
+%ext%
 REM pause
 
 REM :read_settings
