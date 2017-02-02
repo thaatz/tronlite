@@ -23,13 +23,33 @@ if /i not %ERRORLEVEL%==0 (
 	exit /b 1	)
 
 
-title Buttfixer 3000
+title Tronlite
+:main
+echo.
+echo dont forget to double check settings.ini
+echo.
+echo  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+echo  º                                Tronlite                                   º
+echo  ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+echo  º What should we do when we're done?                                        º
+echo  º                                                                           º
+echo  º [1] Restart (recommended)                                                 º
+echo  º [2] Shutdown                                                              º
+echo  º [0] Do nothing                                                            º
+echo  ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+set /p exs=Make selection: 
+if /i %exs%=="1" goto m2
+if /i %exs%=="2" goto m2
+if /i %exs%=="0" goto m2
+goto :main
+pause
+
 echo tronlite %date% at %time%>>"%tronlog%"
 for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
 	:: we pushd every time to reset the current directory
 	pushd "%~dp0" 2>NUL
 	echo. >>"%tronlog%"
-	echo %time% running %%i>>"%tronlog%"
+	echo running %%i>>"%tronlog%"
 	call "%%i"
 )
 echo tronlite finished on %date% at %time%>>"%tronlog%"
