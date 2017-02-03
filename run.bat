@@ -22,9 +22,8 @@ if /i not %ERRORLEVEL%==0 (
 	pause
 	exit /b 1	)
 
-
-title Tronlite
 :main
+title Tronlite
 cls
 :: internal count of scripts for the session
 set /a cnt=0
@@ -71,6 +70,7 @@ set cnt2=0
 for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
 	:: we pushd every time to reset the current directory
 	pushd "%~dp0" 2>NUL
+	title Tronlite
 	REM echo. >>"%tronlog%"
 	set /a cnt2+=1
 	echo ^(!cnt2!/%cnt%^) running %%i>>"%tronlog%"
