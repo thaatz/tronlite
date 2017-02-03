@@ -18,5 +18,6 @@ The following example scripts have been included:
 
 
 todo/ideas man
+* make a log folder on to put all log files into
 * [done] schedule chkdsk /f then reboot at completion instead of checking and then scheduling (this way chkdsk runs only one time)
 * [nah b/c windows xp only] pagedefrag -o
