@@ -1,3 +1,4 @@
+@echo off
 pushd %~dp0 2>NUL
 :: we call with start so that it opens in another process so we can start jrt right away
 start wscript "jrt.vbs"

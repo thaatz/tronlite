@@ -4,6 +4,7 @@ Set WshShell = WScript.CreateObject("WScript.Shell")
 WshShell.AppActivate "junkware removal tool"
 WScript.Sleep 5000 ' wait 5 seconds just in case the computer is slow
 WshShell.SendKeys "a"
+WScript.Sleep 250 ' a split second so the computer is still with us
 WshShell.SendKeys "^c" ' cancel system restore
 WScript.Sleep 1000
 WshShell.SendKeys "n" ' enter no at the terminate batch job prompt
