@@ -11,6 +11,12 @@ The following example scripts have been included:
 * ccleaner portable
 * defraggler portable
 
+### Recommended Scripts
+* [SMART startup (HDD SMART status check)](https://github.com/thaatz/smart-startup)
+* [Disinfectant (antimalware)](https://github.com/thaatz/disinfectant)
+* [xpSFC (System file repair)](https://github.com/thaatz/xpsfc)
+
+
 todo/ideas man
 * [done] schedule chkdsk /f then reboot at completion instead of checking and then scheduling (this way chkdsk runs only one time)
 * [nah b/c windows xp only] pagedefrag -o
