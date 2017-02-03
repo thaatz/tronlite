@@ -72,7 +72,7 @@ for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
 	:: we pushd every time to reset the current directory
 	pushd "%~dp0" 2>NUL
 	REM echo. >>"%tronlog%"
-	set /a cnt+=1
+	set /a cnt2+=1
 	echo ^(!cnt2!/%cnt%^) running %%i>>"%tronlog%"
 	echo ^(!cnt2!/%cnt%^) running %%i
 	call "%%i"
