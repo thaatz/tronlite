@@ -9,17 +9,15 @@ jrt.exe
 tasklist /fi "WINDOWTITLE eq jrt*" 2>nul | find /i "notepad" >nul
 if ERRORLEVEL 1 (
 	:: this is what happens when it is not running
-	REM cls
-	REM echo its not here yet
+	REM [DEBUG] echo its not here yet
 	ping localhost -n 6 >nul
 	goto loop
 ) else (
 	:: this is what happens when it is running
-	REM cls
 	goto continue
 )
 
 :continue
 :: this is what happens after it runs
-:: restore the registry key we exported at the begining
+:: closing the jrt log file will complete jrt
 taskkill /im notepad.exe /fi "WINDOWTITLE eq jrt*" >nul
