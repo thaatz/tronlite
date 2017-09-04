@@ -28,7 +28,7 @@ tasklist /fi "IMAGENAME eq cmd.exe" /v 2>nul | find /i "junkware" >nul
 if ERRORLEVEL 1 (
 	:: this is what happens when it is not running
 	REM echo [DEBUG] echo its not here yet
-	ping localhost -n 4
+	ping localhost -n 4 >nul
 	goto jscript
 )
 
@@ -38,8 +38,8 @@ REM echo [debug] waiting 90 seconds
 REM ping localhost -n 121 >nul
 REM echo [debug] done
 :: second wait period is only needed if we use vbs script to cancel the system restore point in JRT
-echo [debug] starting second wait period
-ping localhost -n 121
+REM echo [debug] starting second wait period
+ping localhost -n 121 >nul
 
 :: http://stackoverflow.com/questions/8177695/how-to-wait-for-a-process-to-terminate-to-execute-another-process-in-batch-file
 :: http://stackoverflow.com/questions/162291/how-to-check-if-a-process-is-running-via-a-batch-script
