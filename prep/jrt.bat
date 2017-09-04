@@ -6,10 +6,13 @@ color
 color 1f
 echo.
 echo.
-echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-echo !!   JRT will run and a visual basic script will emulate keystrokes.
-echo !!   It is strongly advised you do not touch anything until JRT has completed its course, otherwise the visual basic script will fail.
-echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+REM echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+:: because of setlocal enabledelayedexpansion, we use double carrot, ^^, as escape characters for !
+echo ^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!
+echo ^^!^^!   JRT will run and a visual basic script will emulate keystrokes.          ^^!^^!
+echo ^^!^^!   It is strongly advised you do not touch anything until JRT has           ^^!^^!
+echo ^^!^^!   completed its course, otherwise the visual basic script will fail.       ^^!^^!
+echo ^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!
 echo.
 echo.
 echo resuming in 5 seconds...
@@ -34,7 +37,7 @@ ping localhost -n 121 >nul
 REM echo [debug] done
 :: second wait period is only needed if we use vbs script to cancel the system restore point in JRT
 REM echo [debug] starting second wait period
-ping localhost -n 121
+ping localhost -n 121 >nul
 
 :: http://stackoverflow.com/questions/8177695/how-to-wait-for-a-process-to-terminate-to-execute-another-process-in-batch-file
 :: http://stackoverflow.com/questions/162291/how-to-check-if-a-process-is-running-via-a-batch-script
