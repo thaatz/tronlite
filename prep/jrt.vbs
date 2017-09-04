@@ -4,10 +4,10 @@ Set WshShell = WScript.CreateObject("WScript.Shell")
 WshShell.AppActivate "junkware removal tool"
 WScript.Sleep 5000 ' wait 5 seconds for jrt to check for updates
 WshShell.SendKeys "a"
-WScript.Sleep 2000 ' a half second so the computer is still with us
+WScript.Sleep 3500 ' a half second so the computer is still with us
 ' WshShell.SendKeys "a" ' another keypress in case we missed the first one
 WshShell.SendKeys "^c" ' cancel system restore
-WScript.Sleep 2000
+WScript.Sleep 3500
 WshShell.SendKeys "n" ' enter no at the terminate batch job prompt
 WshShell.SendKeys "{ENTER}"
 ' another key press in case the system restore fails
