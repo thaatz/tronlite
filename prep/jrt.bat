@@ -15,25 +15,31 @@ echo ^^!^^!   completed its course, otherwise the visual basic script will fail.
 echo ^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!^^!
 echo.
 echo.
-echo resuming in 5 seconds...
-ping localhost -n 2 >nul
-echo resuming in 4 seconds...
-ping localhost -n 2 >nul
 echo resuming in 3 seconds...
-ping localhost -n 2 >nul
-echo resuming in 2 seconds...
-ping localhost -n 2 >nul
-echo resuming in 1 second...
-ping localhost -n 2 >nul
+ping localhost -n 4 >nul
 :: change the color back to normal
 color 07
 REM echo debug going
 :: we call with start so that it opens in another process so we can start jrt right away
-start wscript "jrt.vbs"
 start jrt.exe
+:jscript
+REM tasklist /fi "IMAGENAME eq cmd.exe" /v | find /i "junkware"
+tasklist /fi "IMAGENAME eq cmd.exe" /v 2>nul | find /i "junkware" >nul
+if ERRORLEVEL 1 (
+	:: this is what happens when it is not running
+	REM echo [DEBUG] echo its not here yet
+	ping localhost -n 4 >nul
+	goto jscript
+) else (
+	:: this is what happens when it is running
+	REM echo found!
+	goto jcontinue
+)
+:jcontinue
+start wscript "jrt.vbs"
 :: wait 90 seconds before we start the loop for jrt log detection
 REM echo [debug] waiting 90 seconds
-ping localhost -n 121 >nul
+REM ping localhost -n 121 >nul
 REM echo [debug] done
 :: second wait period is only needed if we use vbs script to cancel the system restore point in JRT
 REM echo [debug] starting second wait period
