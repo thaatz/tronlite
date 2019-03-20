@@ -1,0 +1,3 @@
+[submodule "xpsfc"]
+	path = xpsfc
+	url = https://github.com/thaatz/xpsfc.git
