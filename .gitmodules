@@ -1,3 +1,6 @@
 [submodule "xpsfc"]
 	path = xpsfc
 	url = https://github.com/thaatz/xpsfc.git
+[submodule "disinfectant"]
+	path = disinfectant
+	url = https://github.com/thaatz/disinfectant.git
