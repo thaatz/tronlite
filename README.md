@@ -16,8 +16,15 @@ The following example scripts have been included:
 * [Disinfectant (antimalware)](https://github.com/thaatz/disinfectant)
 * [xpSFC (System file repair)](https://github.com/thaatz/xpsfc)
 
+---
 
-todo/ideas man
+#### todo/ideas man
 * make a log folder on to put all log files into
 * [done] schedule chkdsk /f then reboot at completion instead of checking and then scheduling (this way chkdsk runs only one time)
 * [nah b/c windows xp only] pagedefrag -o
+
+#### dev notes for windows xp support
+this is on the backburner, but here are some notes for windows xp
+- ccleaner updating script would need to use wget 1.19.4 from https://eternallybored.org/misc/wget/
+- emsisoft emergency kit does not support windows xp https://help.emsisoft.com/en/1805/why-can-t-i-install-an-emsisoft-product-on-windows-xp-vista/
+
