@@ -27,9 +27,9 @@ title Tronlite
 cls
 :: internal count of scripts for the session
 set /a cnt=0
-for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
+for /f "eol=; tokens=1" %%i in (settings.ini) do (
 	:: list out what we find in the settings.ini file
-	echo "%%i"
+	echo %%i
 	set /a cnt+=1
 )
 echo.
@@ -67,7 +67,7 @@ setlocal enabledelayedexpansion
 set cnt2=0
 :: this enables us to count within the for loop
 :: http://stackoverflow.com/questions/7522740/counting-in-a-for-loop-using-windows-batch-script
-for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
+for /f "eol=; tokens=1" %%i in (settings.ini) do (
 	:: we pushd every time to reset the current directory
 	pushd "%~dp0" 2>NUL
 	title Tronlite
@@ -75,7 +75,9 @@ for /f "eol=; delims== tokens=1" %%i in (settings.ini) do (
 	set /a cnt2+=1
 	echo ^(!cnt2!/%cnt%^) running %%i>>"%tronlog%"
 	echo ^(!cnt2!/%cnt%^) running %%i
-	call "%%i"
+	call %%i
+	:: you can use quotes around %%i and it would allow you to use path names with spaces, but it would disallow using arugments
+	:: we take the quotes out here to allow additional arguments with some of the modules
 )
 endlocal
 echo tronlite finished on %date% at %time%>>"%tronlog%"
