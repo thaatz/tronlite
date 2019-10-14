@@ -1,6 +1,12 @@
 [submodule "xpsfc"]
 	path = xpsfc
 	url = https://github.com/thaatz/xpsfc.git
+	ignore = dirty
 [submodule "disinfectant"]
 	path = disinfectant
 	url = https://github.com/thaatz/disinfectant.git
+	ignore = dirty
+[submodule "ccleaner-autoupdate"]
+	path = ccleaner-autoupdate
+	url = https://github.com/thaatz/ccleaner-autoupdate.git
+	ignore = dirty

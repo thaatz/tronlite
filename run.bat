@@ -27,7 +27,7 @@ title Tronlite
 cls
 :: internal count of scripts for the session
 set /a cnt=0
-for /f "eol=; tokens=1" %%i in (settings.ini) do (
+for /f "eol=; delims=" %%i in (settings.ini) do (
 	:: list out what we find in the settings.ini file
 	echo %%i
 	set /a cnt+=1
@@ -67,7 +67,8 @@ setlocal enabledelayedexpansion
 set cnt2=0
 :: this enables us to count within the for loop
 :: http://stackoverflow.com/questions/7522740/counting-in-a-for-loop-using-windows-batch-script
-for /f "eol=; tokens=1" %%i in (settings.ini) do (
+REM for /f "eol=; tokens=1" %%i in (settings.ini) do (
+for /f "eol=; delims=" %%i in (settings.ini) do (
 	:: we pushd every time to reset the current directory
 	pushd "%~dp0" 2>NUL
 	title Tronlite
